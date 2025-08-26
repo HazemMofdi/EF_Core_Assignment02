@@ -12,22 +12,21 @@ namespace EF_Core_Assignment02.Configurations
 
             builder.Property("FName")
                 .HasColumnName("First Name")
-                .HasColumnType("nvarchar(100)")
-                .HasMaxLength(50);
+                .HasColumnType("nvarchar(50)");
 
             builder.Property("LName")
                 .HasColumnName("Last Name")
-                .HasColumnType("nvarchar(100)")
-                .HasMaxLength(50);
+                .HasColumnType("nvarchar(50)");
+
 
             builder.Property("Address")
                 .HasColumnName("Address")
-                .HasColumnType("nvarchar(100)")
-                .HasMaxLength(150);
+                .HasColumnType("nvarchar(150)");
 
             builder.Property("Age")
                 .HasColumnName("Student Age")
                 .HasColumnType("int");
+
         }
     }
 }

@@ -26,7 +26,8 @@ namespace EF_Core_Assignment02.Configurations
                    .IsUnique();
 
             builder.Property("Description")
-                   .HasColumnType("nvarchar(100)");
+                   .HasColumnType("nvarchar(255)");
+
 
         }
     }

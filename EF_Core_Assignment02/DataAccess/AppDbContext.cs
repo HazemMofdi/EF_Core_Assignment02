@@ -16,6 +16,10 @@ namespace EF_Core_Assignment02.DataAccess
         public DbSet<Course> Courses { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Topic> Topics { get; set; }
+        public DbSet<Stud_Course> Stud_Courses { get; set; }
+        public DbSet<Inst_Course> Inst_Courses { get; set; }
+        
+
         public AppDbContext() : base()
         {
 
