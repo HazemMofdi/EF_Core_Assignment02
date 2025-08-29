@@ -26,8 +26,8 @@ namespace EF_Core_Assignment02.Models
 
         [ForeignKey("Department")]
         public int Dept_ID { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
-        public ICollection<Stud_Course> Stud_Courses { get; set; }
+        public virtual ICollection<Stud_Course> Stud_Courses { get; set; }
     }
 }

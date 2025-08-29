@@ -14,6 +14,6 @@ namespace EF_Core_Assignment02.Models
         [Required, MaxLength(100)]
         public string Name { get; set; }
 
-        public ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

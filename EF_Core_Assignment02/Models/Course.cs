@@ -21,9 +21,9 @@ namespace EF_Core_Assignment02.Models
 
         [ForeignKey("Topic")]
         public int Topic_ID { get; set; }
-        public Topic Topic { get; set; }
+        public virtual Topic Topic { get; set; }
 
-        public ICollection<Stud_Course> Stud_Courses { get; set; }
-        public ICollection<Inst_Course> Inst_Courses { get; set; }
+        public virtual ICollection<Stud_Course> Stud_Courses { get; set; }
+        public virtual ICollection<Inst_Course> Inst_Courses { get; set; }
     }
 }

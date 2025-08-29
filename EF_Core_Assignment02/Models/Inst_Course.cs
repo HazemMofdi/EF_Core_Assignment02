@@ -15,11 +15,11 @@ namespace EF_Core_Assignment02.Models
 
         [ForeignKey("Instructor")]
         public int Inst_ID { get; set; }
-        public Instructor Instructor { get; set; }
+        public virtual Instructor Instructor { get; set; }
 
 
         [ForeignKey("Course")]
         public int Course_ID { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

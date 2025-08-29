@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using EF_Core_Assignment02.DataAccess;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,14 +19,16 @@ namespace EF_Core_Assignment02.Models
 
         public DateOnly HiringDate { get; set; }
 
+        #region Manage Relationship
         [ForeignKey("DepartmentManager")]
         [InverseProperty("ManagedDepartment")]
         public int? DepartmentManager_ID { get; set; }
-        public Instructor DepartmentManager { get; set; }
+        public virtual Instructor DepartmentManager { get; set; } 
+        #endregion
 
         [InverseProperty("Department")]
-        public ICollection<Instructor> Instructors { get; set; }
+        public virtual ICollection<Instructor> Instructors { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

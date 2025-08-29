@@ -19,14 +19,18 @@ namespace EF_Core_Assignment02.Models
         public string? Address { get; set; }
         public decimal HourRateBouns { get; set; }
 
+        #region One To Many Department Instructor
         [ForeignKey("Department")]
         [InverseProperty("Instructors")]
         public int Dept_ID { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
+        #endregion
 
+        #region Manage Relationship
         [InverseProperty("DepartmentManager")]
-        public Department? ManagedDepartment { get; set; }
+        public virtual Department? ManagedDepartment { get; set; } 
+        #endregion
 
-        public ICollection<Inst_Course> Inst_Courses { get; set; }
+        public virtual ICollection<Inst_Course> Inst_Courses { get; set; }
     }
 }

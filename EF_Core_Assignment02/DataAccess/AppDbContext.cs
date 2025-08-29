@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EF_Core_Assignment02.DataAccess
 {
-    internal class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Student> Students {  get; set; }
         public DbSet<Department> Departments { get; set; }
@@ -27,7 +27,9 @@ namespace EF_Core_Assignment02.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=Route_EF_Core_SessionTwoAssignment;Integrated Security=SSPI;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer
+                ("Server=.;Database=Route_EF_Core_SessionTwoAssignment;Integrated Security=SSPI;TrustServerCertificate=true")
+                .UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
